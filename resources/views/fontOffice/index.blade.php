@@ -8,13 +8,13 @@
 	<meta name="description" content="">
 
 	<!--== CSS Files ==-->
-	<link href="/assets/css/bootstrap.css" rel="stylesheet" media="screen">
-	<link href="/assets/css/style.css" rel="stylesheet" media="screen">
-	<link href="/assets/css/font-awesome.css" rel="stylesheet" media="screen">
-	<link href="/assets/css/owl.carousel.css" rel="stylesheet" media="screen">
-	<link href="/assets/css/flexslider.css" rel="stylesheet" media="screen">
-	<link href="/assets/css/fancySelect.css" rel="stylesheet" media="screen">
-	<link href="/assets/css/responsive.css" rel="stylesheet" media="screen">
+	<link href="Pfront/assets/css/bootstrap.css" rel="stylesheet" media="screen">
+	<link href="Pfront/assets/css/style.css" rel="stylesheet" media="screen">
+	<link href="Pfront/assets/css/font-awesome.css" rel="stylesheet" media="screen">
+	<link href="Pfront/assets/css/owl.carousel.css" rel="stylesheet" media="screen">
+	<link href="Pfront/assets/css/flexslider.css" rel="stylesheet" media="screen">
+	<link href="Pfront/assets/css/fancySelect.css" rel="stylesheet" media="screen">
+	<link href="Pfront/assets/css/responsive.css" rel="stylesheet" media="screen">
 
 	<!--== Google Fonts ==-->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -68,9 +68,9 @@
 			<div class="container">
 				<div class="row">
 					<div class="entry-content">
-						<p><span class="start-text"><b>From THE MARCH 7, 2014</b></span></p>
-						<h4 class="entry-title"><a href="#">Organizing World class events</a></h4>
-						<h5><span><b>Schrodinger confirms that Germany international ...</b></span></h5>
+						<p><span class="start-text"><b>STAY TUNED EVENTO</b></span></p>
+						<h4 class="entry-title"><a href="#">The biggest event booking platform</a></h4>
+						<h5><span><b>coming really soon ...</b></span></h5>
 					</div>
 				</div>
 			</div>
@@ -84,8 +84,8 @@
 
 				<!--== Main Slider ==-->
 				<ul class="slides">
-					<li><img src="/assets/images/demo/bg-slide-01.jpg" alt="Slide Image" /></li>
-					<li><img src="/assets/images/demo/bg-slide-02.jpg" alt="Slide Image 2" /></li>
+					<li><img src="Pfront/assets/images/demo/bg-slide-01.jpg" alt="Slide Image" /></li>
+					<li><img src="Pfront/assets/images/demo/bg-slide-02.jpg" alt="Slide Image 2" /></li>
 				</ul>
 
 			</div>
@@ -405,7 +405,7 @@
 						<h3>
 							Posted by <a href="#">Shuvo</a><span class="date-line"> on April 1st</span>
 						</h3>
-						<img class="blog-image" src="/assets/images/demo/blog2.jpg" width="100%" height="250" alt="Blog Image 2" />
+						<img class="blog-image" src="Pfront/assets/images/demo/blog2.jpg" width="100%" height="250" alt="Blog Image 2" />
 
 						<p class="firstpara"><span class="firstcharacter">P</span>ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
 
@@ -416,7 +416,7 @@
 					<div class="blog col-md-4">
 						<h2 class="blog-head">Evento at NY</h2>
 						<h3>Posted by <a href="#">Shuvo</a><span class="date-line"> on April 30th</span></h3>
-						<img class="blog-image" src="/assets/images/demo/blog1.jpg" width="100%" height="250" alt="Blog Image 2" />
+						<img class="blog-image" src="Pfront/assets/images/demo/blog1.jpg" width="100%" height="250" alt="Blog Image 2" />
 						<p class="firstpara"><span class="firstcharacter">G</span>et out of here!" bellowed a brawny man with a beard as long as Charlie's arm. "Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante."Pellentesque habitant morbi tristique." said Charlie.Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
 						<button class="button-info read-more">Read More</button>
 					</div>
@@ -424,7 +424,7 @@
 						<h2 class="blog-head">US Feast</h2>
 
 						<h3>Posted by <a href="#">Shuvo</a><span class="date-line"> on April 1st</span></h3>
-						<img class="blog-image" src="/assets/images/demo/blog2.jpg" width="100%" height="250" alt="Blog Image 2" />
+						<img class="blog-image" src="Pfront/assets/images/demo/blog2.jpg" width="100%" height="250" alt="Blog Image 2" />
 						<p class="firstpara"><span class="firstcharacter">P</span>ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
 						<button class="button-info read-more">Read More</button>
 					</div>
@@ -547,7 +547,7 @@
 				</div>
 				<div class="team-member row">
 					<div class="col-md-3 col-sm-6 member">
-						<img class="blog-image" src="/assets/images/team1.jpg" width="100%" height="280" alt="Blog Image 2" />
+						<img class="blog-image" src="Pfront/assets/images/team1.jpg" width="100%" height="280" alt="Blog Image 2" />
 						<p class="name-member">Jon Doe, CEO</p>
 						<ul class="team-ist">
 							<li>CSS3 </li>
@@ -562,7 +562,7 @@
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6 member">
-						<img class="blog-image" src="/assets/images/team2.jpg" width="100%" height="280" alt="Blog Image 2" />
+						<img class="blog-image" src="Pfront/assets/images/team2.jpg" width="100%" height="280" alt="Blog Image 2" />
 						<p class="name-member">Jon Doe, Head of Ideas</p>
 						<ul class="team-ist">
 							<li>CSS3 </li>
@@ -577,7 +577,7 @@
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6 member">
-						<img class="blog-image" src="/assets/images/team3.jpg" width="100%" height="280" alt="Blog Image 2" />
+						<img class="blog-image" src="Pfront/assets/images/team3.jpg" width="100%" height="280" alt="Blog Image 2" />
 						<p class="name-member">Jon Doe, Chief Developer</p>
 						<ul class="team-ist">
 							<li>CSS3 </li>
@@ -592,7 +592,7 @@
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6 member">
-						<img class="blog-image" src="/assets/images/team4.jpg" width="100%" height="280" alt="Blog Image 2" />
+						<img class="blog-image" src="Pfront/assets/images/team4.jpg" width="100%" height="280" alt="Blog Image 2" />
 						<p class="name-member">Jon Doe, Event Manager</p>
 						<ul class="team-ist">
 							<li>CSS3 </li>
@@ -627,21 +627,21 @@
 				</div>
 				<div id="testimonial-container" class="col-xs-12">
 					<div class="testimonila-block">
-						<img src="/assets/images/testimonial.jpg" alt="clients" class="selfshot">
+						<img src="Pfront/assets/images/testimonial.jpg" alt="clients" class="selfshot">
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem sed mollitia illum! Molestiae dignissimos, hic dolorem et eius ut nobis. Corrupti totam amet aperiam aut voluptate nobis dolor at soluta.</p>
 						<strong>Monir Hossain</strong>
 						<br>
 						<small>C.E.O</small>
 					</div>
 					<div class="testimonila-block">
-						<img src="/assets/images/testimonial2.jpg" alt="clients" class="selfshot">
+						<img src="Pfront/assets/images/testimonial2.jpg" alt="clients" class="selfshot">
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem sed mollitia illum! Molestiae dignissimos, hic dolorem et eius ut nobis. Corrupti totam amet aperiam aut voluptate nobis dolor at soluta.</p>
 						<strong>Nur Ul Hossain</strong>
 						<br>
 						<small>Project Manager</small>
 					</div>
 					<div class="testimonila-block">
-						<img src="/assets/images/testimonial3.jpg" alt="clients" class="selfshot">
+						<img src="Pfront/assets/images/testimonial3.jpg" alt="clients" class="selfshot">
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem sed mollitia illum! Molestiae dignissimos, hic dolorem et eius ut nobis. Corrupti totam amet aperiam aut voluptate nobis dolor at soluta.</p>
 						<strong>Rub Elvi</strong>
 						<br>
@@ -730,18 +730,18 @@
 
 	<!--== Javascript Files ==-->
 	<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-	<script src="/assets/js/jquery-2.1.0.min.js"></script>
-	<script src="/assets/js/bootstrap.min.js"></script>
-	<script src="/assets/js/jquery.scrollTo.js"></script>
-	<script src="/assets/js/jquery.nav.js"></script>
-	<script src="/assets/js/jquery.flexslider.js"></script>
-	<script src="/assets/js/jquery.accordion.js"></script>
-	<script src="/assets/js/jquery.placeholder.js"></script>
-	<script src="/assets/js/jquery.fitvids.js"></script>
-	<script src="/assets/js/gmap3.js"></script>
-	<script src="/assets/js/fancySelect.js"></script>
-	<script src="/assets/js/owl.carousel.min.js"></script>
-	<script src="/assets/js/main.js"></script>
+	<script src="Pfront/assets/js/jquery-2.1.0.min.js"></script>
+	<script src="Pfront/assets/js/bootstrap.min.js"></script>
+	<script src="Pfront/assets/js/jquery.scrollTo.js"></script>
+	<script src="Pfront/assets/js/jquery.nav.js"></script>
+	<script src="Pfront/assets/js/jquery.flexslider.js"></script>
+	<script src="Pfront/assets/js/jquery.accordion.js"></script>
+	<script src="Pfront/assets/js/jquery.placeholder.js"></script>
+	<script src="Pfront/assets/js/jquery.fitvids.js"></script>
+	<script src="Pfront/assets/js/gmap3.js"></script>
+	<script src="Pfront/assets/js/fancySelect.js"></script>
+	<script src="Pfront/assets/js/owl.carousel.min.js"></script>
+	<script src="Pfront/assets/js/main.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 
