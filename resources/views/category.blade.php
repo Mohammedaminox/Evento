@@ -89,7 +89,7 @@
                     @method('PUT')
                     <div class="mb-3">
                         <label for="editCategoryName" class="form-label">Category Name</label>
-                        <input type="text" class="form-control" id="editCategoryName"  name="name" placeholder="Enter category name">
+                        <input type="text" class="form-control" id="editCategoryName" name="name" placeholder="Enter category name">
                     </div>
                     <button type="submit" class="btn btn-primary">Save Changes</button>
                 </form>
@@ -128,27 +128,27 @@
 
 @endsection
 
-<script src="../assets/libs/jquery/dist/jquery.min.js"></script>
-<script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../assets/js/sidebarmenu.js"></script>
-<script src="../assets/js/app.min.js"></script>
-<script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+<script src="Pback/assets/libs/jquery/dist/jquery.min.js"></script>
+<script src="Pback/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="Pback/assets/js/sidebarmenu.js"></script>
+<script src="Pback/assets/js/app.min.js"></script>
+<script src="Pback/assets/libs/simplebar/dist/simplebar.js"></script>
 <script>
-   function openEditModal(categoryId, categoryName) {
-    var editForm = document.getElementById('editCategoryForm');
-    editForm.action = '/category/' + categoryId;
+    function openEditModal(categoryId, categoryName) {
+        var editForm = document.getElementById('editCategoryForm');
+        editForm.action = '/category/' + categoryId;
 
-    var editModal = new bootstrap.Modal(document.getElementById('editCategoryModal'));
-    editModal.show();
+        var editModal = new bootstrap.Modal(document.getElementById('editCategoryModal'));
+        editModal.show();
 
-    document.getElementById('editCategoryName').value = categoryName;
-}
+        document.getElementById('editCategoryName').value = categoryName;
+    }
 
     function openDeleteModal(categoryId) {
         var deleteForm = document.getElementById('deleteCategoryForm');
         deleteForm.action = '/category/' + categoryId;
 
-            var deleteModal = new bootstrap.Modal(document.getElementById('deleteCategoryModal'));
+        var deleteModal = new bootstrap.Modal(document.getElementById('deleteCategoryModal'));
         deleteModal.show();
     }
 </script>

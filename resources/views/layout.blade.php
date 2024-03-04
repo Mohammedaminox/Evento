@@ -94,7 +94,7 @@
                                 <span>
                                     <i class="ti ti-article"></i>
                                 </span>
-                                <span class="hide-menu">Emails</span>
+                                <span class="hide-menu">Users</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
@@ -102,7 +102,7 @@
                                 <span>
                                     <i class="ti ti-alert-circle"></i>
                                 </span>
-                                <span class="hide-menu">News Letters</span>
+                                <span class="hide-menu">Events</span>
                             </a>
                         </li>
                         <li class="sidebar-item">

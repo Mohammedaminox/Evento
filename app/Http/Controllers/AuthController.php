@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -23,7 +24,7 @@ class AuthController extends Controller
             'name' => $request->input('name'),
             'email' => $request->input('email'),
             'password' => bcrypt($request->input('password')),
-           
+
         ]);
         return redirect('/login')->with('success', 'Registration successful. Please log in.');
     }
@@ -39,9 +40,15 @@ class AuthController extends Controller
                 session(['username' => $user->name]);
                 session(['email' => $user->email]);
                 session(['user_id' => $user->id]);
-                    
-                return redirect('/dashboard');
-                
+
+                if ($user->role == 'user') {
+
+                    return redirect('/event');
+
+                } elseif (($user->role == 'admin')) {
+
+                    return redirect('/dashboard');
+                }
             } else {
                 return redirect('/login')->withErrors(['password' => 'Invalid password']);
             }

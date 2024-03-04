@@ -5,35 +5,16 @@
     <div class="container-fluid">
         <div class="card">
 
-            <div class="d-flex justify-content-between align-items-center mb-3" id="header2">
-                <div>
-                    <button type="button" class="btn btn-primary btn-sm me-2" data-bs-toggle="modal"
-                        data-bs-target="#AddEmail">Add Email</button>
-                    <button type="button" class="btn btn-success btn-sm me-2" data-bs-toggle="modal"
-                        data-bs-target="#ImportMail">Import</button>
-                    @if ($count > 0)
-                        <a href="/Export"><button class="btn btn-secondary btn-sm me-2">Export</button></a>
-                        <button type="button" class="btn btn-danger btn-sm me-2" data-bs-toggle="modal"
-                            data-bs-target="#DeleteAllEmail">Delete All</button>
-                    @endif
-
-                </div>
-                <div>
-                    <!-- You can add any additional controls or information here if needed -->
-                </div>
-            </div>
 
 
-            @if (session('msg'))
-                <div class="alert alert-success" style="color: black">{{ session('msg') }}</div>
-            @endif
-            @if (session('delmsg'))
-                <div class="alert alert-danger" style="color: black">{{ session('delmsg') }}</div>
-            @endif
+                <div class="alert alert-success" style="color: black"></div>
+              
+                <div class="alert alert-danger" style="color: black"></div>
+        
 
             <table class="table align-middle mb-0 bg-white">
                 <thead class="bg-light">
-                    @if ($count > 0)
+                 
                         <tr>
                             <th>Email</th>
                             <th>Date Create</th>
@@ -43,23 +24,23 @@
                             <th></th>
                             <th>Actions</th>
                         </tr>
-                    @endif
+                
                 </thead>
                 <tbody>
-                    @forelse ($getEmails as $mail)
+                 
                         <tr>
                             <td>
                                 <div class="d-flex align-items-center">
                                     <div class="ms-3">
-                                        <p class="text-muted mb-0">{{ $mail->email }}</p>
+                                        <p class="text-muted mb-0"></p>
                                     </div>
                                 </div>
                             </td>
                             <td>
-                                <p class="text-muted mb-0">{{ $mail->created_at->format('d/m/Y') }}</p>
+                                <p class="text-muted mb-0"></p>
                             </td>
                             <td>
-                                <p class="text-muted mb-0">{{ $mail->created_at->format('H:i') }}</p>
+                                <p class="text-muted mb-0"></p>
                             </td>
                             <td>
                                 <span class="badge badge-success rounded-pill d-inline">Active</span>
@@ -68,13 +49,13 @@
                             <td></td>
                             <td>
                                 <button type="button" class="btn btn-link btn-sm btn-rounded text-danger"
-                                    data-bs-toggle="modal" data-bs-target="#DeleteEmail{{ $mail->id }}"
-                                    data-mail-id="{{ $mail->id }}">Delete</button>
+                                    data-bs-toggle="modal" data-bs-target=""
+                                    data-mail-id="">Delete</button>
                                 <button type="button" class="btn btn-link btn-sm btn-rounded" data-bs-toggle="modal"
-                                    data-bs-target="#EditEmail{{ $mail->id }}">Edit</button>
+                                    data-bs-target="">Edit</button>
                             </td>
 
-                            <div class="modal fade" id="DeleteEmail{{ $mail->id }}" tabindex="-1"
+                            <div class="modal fade" id="" tabindex="-1"
                                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
@@ -90,14 +71,14 @@
                                                 <div class="mb-3">
                                                     <h3 class="text-danger" style="text-align: center">Are You
                                                         Sure</h3>
-                                                    <p style="text-align: center">Delete : {{ $mail->email }}
+                                                    <p style="text-align: center">Delete : 
                                                     </p>
                                                 </div>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
                                                 data-bs-dismiss="modal">Close</button>
-                                            <a href="/deleteEmail/{{ $mail->id }}" type="submit"
+                                            <a href="" type="submit"
                                                 class="btn btn-danger">Delete</a>
                                         </div>
                                         </form>
@@ -107,7 +88,7 @@
 
 
 
-                            <div class="modal fade" id="EditEmail{{ $mail->id }}" tabindex="-1"
+                            <div class="modal fade" id="" tabindex="-1"
                                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
@@ -122,10 +103,10 @@
                                                 @csrf
                                                 <div class="mb-3">
 
-                                                    <input type="hidden" value="{{ $mail->id }}" name="id">
+                                                    <input type="hidden" value="" name="id">
                                                     <label for="exampleTextInput" class="form-label">Mail</label>
                                                     <input type="text" class="form-control" name="email"
-                                                        id="exampleTextInput" value="{{ $mail->email }}">
+                                                        id="exampleTextInput" value="">
                                                 </div>
 
                                         </div>
@@ -143,7 +124,7 @@
 
                         </tr>
 
-                    @empty
+                
 
 
                         <div
@@ -152,10 +133,10 @@
                                 alt="" style="width: 20%;" srcset="">
                             <h3 style="margin-top: 2em">Mail List is empty</h3>
                         </div>
-                    @endforelse
+               
                 </tbody>
             </table>
-            <div style="padding: 20px ; ">{{ $getEmails->links('pagination::bootstrap-5') }}</div>
+            <div style="padding: 20px ; "></div>
         </div>
     </div>
     </div>

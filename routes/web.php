@@ -27,6 +27,8 @@ Route::view('/login', 'auth.form');
 Route::view('/', 'auth.form');
 Route::view('/dashboard', 'dashboard');
 
+
+
 Route::resource('category', CategoryController::class)->only([
     'index', 'store', 'update', 'destroy'
 ]);
@@ -38,4 +40,7 @@ Route::resource('category', CategoryController::class)->only([
 
 Route::get('/event', function () {
     return view('fontOffice.index');
+});
+Route::get('/emails', function () {
+    return view('emails');
 });
