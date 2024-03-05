@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,12 +34,16 @@ Route::resource('category', CategoryController::class)->only([
     'index', 'store', 'update', 'destroy'
 ]);
 
+Route::resource('event', EventController::class)->only([
+    'index', 'store', 'update', 'destroy'
+]);
 
 
 
 
 
-Route::get('/event', function () {
+
+Route::get('/evento', function () {
     return view('fontOffice.index');
 });
 Route::get('/emails', function () {

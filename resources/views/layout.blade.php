@@ -90,7 +90,7 @@
                             <span class="hide-menu">Services</span>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="{{ url('/emails') }}" aria-expanded="false">
+                            <a class="sidebar-link" href="{{ url('/users') }}" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-article"></i>
                                 </span>
@@ -98,7 +98,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="{{ url('/newsletter') }}" aria-expanded="false">
+                            <a class="sidebar-link" href="{{ url('/event') }}" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-alert-circle"></i>
                                 </span>
