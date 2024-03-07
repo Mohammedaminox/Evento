@@ -16,15 +16,36 @@
             </div>
             @foreach ($events as $event)
             <div class="card mb-3">
-                <img src="{{ asset('Pback/assets/images/' . $event->image) }}" class="card-img-top w-25" alt="event Image">
                 <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="{{ asset('Pback/assets/images/' . $event->image) }}" class="img-fluid" alt="event Image">
+                        </div>
+                        <div class="col-md-9">
+                            <p class="card-text">{!! $event->description !!}</p>
+                        </div>
+                    </div>
+
                     <h5 class="card-title">{{ $event->titre }}</h5>
-                    <p class="card-text">{!! $event->description !!}</p>
-                    <p><b>Categories:</b>
-                        @foreach ($event->categories as $category)
-                        ,{{ $category->name }}
-                        @endforeach
-                    </p>
+
+                    <div class="row">
+                        <div class="col-3">
+                            <b>Categorie:</b> {{ $event->categories->name }}
+                        </div>
+                        <div class="col-2">
+                            <b>Places:</b> {{ $event->places }}
+                        </div>
+                        <div class="col-3">
+                            <b>Location:</b> {{ $event->location }}
+                        </div>
+                        <div class="col-4 mb-2">
+                            <b>Date:</b> {{ $event->date }}
+                        </div>
+                    </div>
+
+
+
+
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editeventModal{{ $event->id }}">Edit</button>
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDeleteModal{{ $event->id }}">Delete</button>
 
@@ -71,37 +92,46 @@
                                     <!-- Your form fields go here -->
                                     <div class="form-group">
                                         <label for="image">Image</label>
-                                        <input type="file" class="form-control-file" id="images" name="images">
+                                        <input type="file" class="form-control-file" id="image" name="image">
+                                    </div>
+                                    <!-- <div class="form-group">
+                                        <img src="{{ ('Pback/assets/images/'. $event->image) }}" class="card-img-top w-25" alt="event Image">
+                                    </div> -->
+
+                                    <div class="form-group">
+                                        <label for="titre">Titre</label>
+                                        <input type="text" class="form-control" id="titre" name="titre" value="{{ $event->titre }}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="title">Title</label>
-                                        <input type="text" class="form-control" id="title" name="title" value="{{ $event->title }}">
+                                        <label for="eventPlaces">Places</label>
+                                        <input type="number" min="1" class="form-control" id="eventPlaces" name="places" value="{{ $event->places }}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="content">Content</label>
-                                        <textarea class="form-control" id="editor" name="content" rows="6">{{ $event->content }}</textarea>
+                                        <label for="eventLocation">Location</label>
+                                        <input type="text" class="form-control" id="eventLocation" name="location" value="{{ $event->location }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="description">Description</label>
+                                        <textarea class="form-control" id="editor" name="description" rows="6">{{ $event->description }}</textarea>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="user_id">User</label>
-                                        <select class="form-control" id="user_id" name="user_id">
-                                            @foreach ($users as $user)
-                                            <option value="{{ $user->id }}" {{ $event->user_id == $user->id ? 'selected' : '' }}>
-                                                {{ $user->name }}
-                                            </option>
-                                            @endforeach
-                                        </select>
+                                        <label for="eventDate">Date</label>
+                                        <input type="date" class="form-control" id="eventDate" name="date" value="{{( date('Y-m-d', strtotime($event->date))) }}">
                                     </div>
+
+
                                     <div class="form-group">
                                         <label for="categories">Categories</label>
-                                        <select class="form-control" id="categories" name="categories[]" multiple>
-                                            @foreach ($categories as $category)
-                                            <option value="{{ $category->id }}" {{ in_array($category->id, $event->categories->pluck('id')->toArray()) ? 'selected' : '' }}>
+                                        <select class="form-control" name="category_id" id="categories">
+                                            @foreach($categories as $category)
+                                            <option value="{{ $category->id }}" {{ $category->id == $event->category_id ? 'selected' : '' }}>
                                                 {{ $category->name }}
                                             </option>
                                             @endforeach
                                         </select>
                                     </div>
+
 
                             </div>
                             <div class="modal-footer">
@@ -129,8 +159,8 @@
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="eventImage">Image</label>
-                            <input type="file" class="form-control-file" id="images" name="images">
+                            <label for="image">Image</label>
+                            <input type="file" class="form-control-file" id="image" name="image">
                         </div>
                         <div class="form-group">
                             <label for="eventTitle">Titre</label>
@@ -153,20 +183,12 @@
                             <label for="eventDate">Date</label>
                             <input type="date" class="form-control" id="eventDate" name="date" placeholder="Enter date">
                         </div>
-                        <div class="form-group">
-                            <label for="userId">User</label>
-                            <select class="form-control" id="userId" name="user_id">
-                                <!-- Populate options with user IDs -->
-                                @foreach ($users as $user)
-                                <option value="{{ $user->id }}">{{ $user->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
+
                         <div class="form-group">
                             <label for="categories">Categories</label>
-                            <select class="form-control" id="categories" name="categories">
+                            <select class="form-control" id="categories" name="category_id">
                                 @foreach ($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                <option value="{{$category->id }}">{{ $category->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -177,6 +199,10 @@
                                 <option value="manuelle">Manuelle</option>
                             </select>
                         </div>
+
+                        <input type="hidden" value="{{ $user }}" name="user_id">
+
+
 
                     </div>
                     <div class="modal-footer">
@@ -213,11 +239,11 @@
 
 
 
-    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
-    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/js/sidebarmenu.js"></script>
-    <script src="../assets/js/app.min.js"></script>
-    <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+    <script src="Pback/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="Pback/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Pback/assets/js/sidebarmenu.js"></script>
+    <script src="Pback/assets/js/app.min.js"></script>
+    <script src="Pback/assets/libs/simplebar/dist/simplebar.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

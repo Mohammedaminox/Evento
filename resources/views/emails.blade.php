@@ -233,11 +233,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
-    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
-    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/js/sidebarmenu.js"></script>
-    <script src="../assets/js/app.min.js"></script>
-    <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+    <script src="Pback/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="Pback/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Pback/assets/js/sidebarmenu.js"></script>
+    <script src="Pback/assets/js/app.min.js"></script>
+    <script src="Pback/assets/libs/simplebar/dist/simplebar.js"></script>
 @endsection
 
 </body>

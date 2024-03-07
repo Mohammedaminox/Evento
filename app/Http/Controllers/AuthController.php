@@ -43,7 +43,7 @@ class AuthController extends Controller
 
                 if ($user->role == 'user') {
 
-                    return redirect('/event');
+                    return redirect('/evento');
 
                 } elseif (($user->role == 'admin')) {
 
