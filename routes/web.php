@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EventController;
 
+use App\Http\Controllers\AcceptEventController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,14 +39,18 @@ Route::resource('event', EventController::class)->only([
     'index', 'store', 'update', 'destroy'
 ]);
 
+Route::get('/AcceptEvent', [AcceptEventController::class, 'Acceptindex'])->name('AcceptEvent');
+Route::post('/AcceptEvent/{id}/edit', [AcceptEventController::class, 'Approuve'])->name('approuve');
 
 
 
 
 
-Route::get('/evento', function () {
-    return view('fontOffice.index');
-});
+
+// Route::get('/evento', function () {
+//     return view('fontOffice.index');
+// });
+Route::get('/evento', [AcceptEventController::class, 'FrontIndex'])->name('FrontIndex');
 Route::get('/emails', function () {
     return view('emails');
 });

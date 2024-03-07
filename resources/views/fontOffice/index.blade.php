@@ -399,35 +399,22 @@
 				<div class="top">
 				</div>
 				<div class="content">
-
+					@foreach ($Acceptevents as $Acceptevent)
 					<div class="blog col-md-4">
-						<h2 class="blog-head">Evento at HW</h2>
+						<h2 class="blog-head">Evento at {{$Acceptevent->location}} </h2>
 						<h3>
-							Posted by <a href="#">Shuvo</a><span class="date-line"> on April 1st</span>
+							<span class="date-line"> on {{$Acceptevent->date}} </span>
 						</h3>
-						<img class="blog-image" src="Pfront/assets/images/demo/blog2.jpg" width="100%" height="250" alt="Blog Image 2" />
+						<img class="blog-image" src="{{ asset('Pback/assets/images/' . $Acceptevent->image) }}" width="100%" height="250" alt="event Image" />
 
-						<p class="firstpara"><span class="firstcharacter">P</span>ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+						<p class="firstpara"><span class="firstcharacter">P</span>
+						<p> {!! $Acceptevent->description !!} </p>
 
 						<button class="button-info read-more">Read More</button>
+						<button class="button-info read-more">Reserve Now</button>
 
 					</div>
-
-					<div class="blog col-md-4">
-						<h2 class="blog-head">Evento at NY</h2>
-						<h3>Posted by <a href="#">Shuvo</a><span class="date-line"> on April 30th</span></h3>
-						<img class="blog-image" src="Pfront/assets/images/demo/blog1.jpg" width="100%" height="250" alt="Blog Image 2" />
-						<p class="firstpara"><span class="firstcharacter">G</span>et out of here!" bellowed a brawny man with a beard as long as Charlie's arm. "Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante."Pellentesque habitant morbi tristique." said Charlie.Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-						<button class="button-info read-more">Read More</button>
-					</div>
-					<div class="blog col-md-4">
-						<h2 class="blog-head">US Feast</h2>
-
-						<h3>Posted by <a href="#">Shuvo</a><span class="date-line"> on April 1st</span></h3>
-						<img class="blog-image" src="Pfront/assets/images/demo/blog2.jpg" width="100%" height="250" alt="Blog Image 2" />
-						<p class="firstpara"><span class="firstcharacter">P</span>ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-						<button class="button-info read-more">Read More</button>
-					</div>
+					@endforeach
 				</div>
 			</section>
 			<!--==========-->
