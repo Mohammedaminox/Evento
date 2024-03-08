@@ -103,9 +103,6 @@
                                         <label for="image">Image</label>
                                         <input type="file" class="form-control-file" id="image" name="image">
                                     </div>
-                                    <!-- <div class="form-group">
-                                        <img src="{{ ('Pback/assets/images/'. $event->image) }}" class="card-img-top w-25" alt="event Image">
-                                    </div> -->
 
                                     <div class="form-group">
                                         <label for="titre">Titre</label>
@@ -140,6 +137,14 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="typeAccept">Type Acceptation</label>
+                                        <select class="form-control" id="typeAccept" name="typeAccept">
+                                            <option value="automatique" {{ $event->typeAccept === 'automatique' ? 'selected' : '' }}>Automatique</option>
+                                           <option value="manuelle" {{ $event->typeAccept === 'manuelle' ? 'selected' : '' }}>Manuelle</option>
+                                       </select>
+                                    </div>
+
 
 
                             </div>

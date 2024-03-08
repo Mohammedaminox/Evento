@@ -121,6 +121,14 @@
                                 <span class="hide-menu">Categories</span>
                             </a>
                         </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{{ url('/AcceptReservation') }}" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-cards"></i>
+                                </span>
+                                <span class="hide-menu">Reservation</span>
+                            </a>
+                        </li>
 
                         <li class="nav-small-cap">
                             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>

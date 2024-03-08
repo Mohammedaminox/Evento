@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Event;
+use App\Models\Reservation;
 
 class AcceptEventController extends Controller
 {
@@ -23,10 +24,13 @@ class AcceptEventController extends Controller
     }
     public function FrontIndex()
     {
+        $user = session('user_id');
         $Acceptevents = Event::where('status', 'valide')->get();
 
+
         return view('fontOffice.index',[
-            'Acceptevents' => $Acceptevents,
+            'Acceptevents' => $Acceptevents,    
+            'user' => $user,
         ]);
     }
 

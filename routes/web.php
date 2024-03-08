@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\ReservationController;
 
 use App\Http\Controllers\AcceptEventController;
 /*
@@ -42,6 +43,13 @@ Route::resource('event', EventController::class)->only([
 Route::get('/AcceptEvent', [AcceptEventController::class, 'Acceptindex'])->name('AcceptEvent');
 Route::post('/AcceptEvent/{id}/edit', [AcceptEventController::class, 'Approuve'])->name('approuve');
 
+Route::post('/Reservation', [ReservationController::class, 'store'])->name('reservation');
+
+
+Route::get('/AcceptReservation', [ReservationController::class, 'AcceptReservation'])->name('AcceptReservation');
+
+Route::post('/StatusReservation/{id}/accept', [ReservationController::class, 'StatusAccepted'])->name('StatusAccepted');
+Route::post('/StatusReservation/{id}/refuse', [ReservationController::class, 'StatusRefused'])->name('StatusRefused');
 
 
 
@@ -51,6 +59,9 @@ Route::post('/AcceptEvent/{id}/edit', [AcceptEventController::class, 'Approuve']
 //     return view('fontOffice.index');
 // });
 Route::get('/evento', [AcceptEventController::class, 'FrontIndex'])->name('FrontIndex');
+
+// Route::get('/evento', [ReservationController::class, 'store'])->name('reservation');
+
 Route::get('/emails', function () {
     return view('emails');
 });

@@ -407,11 +407,21 @@
 						</h3>
 						<img class="blog-image" src="{{ asset('Pback/assets/images/' . $Acceptevent->image) }}" width="100%" height="250" alt="event Image" />
 
-						<p class="firstpara"><span class="firstcharacter">P</span>
+						<p class="firstpara"><span class="firstcharacter">{{$Acceptevent->titre}}</span>
 						<p> {!! $Acceptevent->description !!} </p>
 
 						<button class="button-info read-more">Read More</button>
-						<button class="button-info read-more">Reserve Now</button>
+
+
+							<form action="{{ route('reservation') }}" method="POST">
+							    @csrf
+								<input type="hidden" name="user_id" value="{{ $user }}">
+
+							    <input type="hidden" name="event_id" value="{{ $Acceptevent->id }}"> <!-- Example event_id value -->
+								<input type="hidden" name="status" value="{{ ($Acceptevent->typeAccept === 'automatique') ? 'accepted' : 'pending' }}">
+							    <button type="submit" class="button-info read-more">Reserve Now</button>
+							</form>
+
 
 					</div>
 					@endforeach
