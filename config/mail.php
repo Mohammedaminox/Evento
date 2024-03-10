@@ -43,6 +43,16 @@ return [
             'username' => env('MAIL_USERNAME'),
             'password' => env('MAIL_PASSWORD'),
             'timeout' => null,
+            'auth_mode' => null,
+        ],
+        'gmail' => [
+            'transport' => 'smtp',
+            'host' => env('GMAIL_MAIL_HOST', 'smtp.gmail.com'),
+            'port' => env('GMAIL_MAIL_PORT', 465),
+            'encryption' => env('GMAIL_MAIL_ENCRYPTION', 'ssl'),
+            'username' => env('GMAIL_MAIL_USERNAME'),
+            'password' => env('GMAIL_MAIL_PASSWORD'),
+            'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN'),
         ],
 

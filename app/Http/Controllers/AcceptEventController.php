@@ -22,14 +22,17 @@ class AcceptEventController extends Controller
             'Acceptcategories' => $Acceptcategories,
         ]);
     }
-    public function FrontIndex()
+    public function FrontIndex(Request $request)
     {
         $user = session('user_id');
-        $Acceptevents = Event::where('status', 'valide')->get();
+        $Acceptevents = Event::where('status', 'valide')->paginate(2); // Paginate results
 
+        if ($request->ajax()) {
+            return view('fontOffice.pagination', compact('Acceptevents'));
+        }
 
-        return view('fontOffice.index',[
-            'Acceptevents' => $Acceptevents,    
+        return view('fontOffice.index', [
+            'Acceptevents' => $Acceptevents,
             'user' => $user,
         ]);
     }

@@ -413,20 +413,21 @@
 						<button class="button-info read-more">Read More</button>
 
 
-							<form action="{{ route('reservation') }}" method="POST">
-							    @csrf
-								<input type="hidden" name="user_id" value="{{ $user }}">
+						<form action="{{ route('reservation') }}" method="POST">
+							@csrf
+							<input type="hidden" name="user_id" value="{{ $user }}">
 
-							    <input type="hidden" name="event_id" value="{{ $Acceptevent->id }}"> <!-- Example event_id value -->
-								<input type="hidden" name="status" value="{{ ($Acceptevent->typeAccept === 'automatique') ? 'accepted' : 'pending' }}">
-							    <button type="submit" class="button-info read-more">Reserve Now</button>
-							</form>
+							<input type="hidden" name="event_id" value="{{ $Acceptevent->id }}"> <!-- Example event_id value -->
+							<input type="hidden" name="status" value="{{ ($Acceptevent->typeAccept === 'automatique') ? 'accepted' : 'pending' }}">
+							<button type="submit" class="button-info read-more">Reserve Now</button>
+						</form>
 
 
 					</div>
 					@endforeach
 				</div>
 			</section>
+			{!! $Acceptevents->links() !!}
 			<!--==========-->
 			<!--===============================-->
 			<!--== Pricing Tables =============-->
