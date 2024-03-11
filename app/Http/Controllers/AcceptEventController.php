@@ -22,14 +22,12 @@ class AcceptEventController extends Controller
             'Acceptcategories' => $Acceptcategories,
         ]);
     }
-    public function FrontIndex(Request $request)
+    public function FrontIndex()
     {
         $user = session('user_id');
-        $Acceptevents = Event::where('status', 'valide')->paginate(2); // Paginate results
+        $Acceptevents = Event::where('status', 'valide')->simplePaginate(3);
 
-        if ($request->ajax()) {
-            return view('fontOffice.pagination', compact('Acceptevents'));
-        }
+
 
         return view('fontOffice.index', [
             'Acceptevents' => $Acceptevents,
@@ -46,5 +44,45 @@ class AcceptEventController extends Controller
             $Acceptevents->save();
         }
         return back();
+    }
+    public function search(Request $request)
+    {
+        // Search by title
+        $query = Event::where('status', 'valide');
+
+        if ($request->has('search')) {
+            $search = $request->input('search');
+            $query->where('titre', 'like', "%$search%");
+        }
+
+        // Apply pagination
+        $Acceptevents = $query->simplePaginate(3);
+        $user = session('user_id');
+
+        return view('fontOffice.index', [
+            'Acceptevents' => $Acceptevents,
+            'user' => $user,
+        ]);
+    }
+    public function filter(Request $request)
+    {
+        // Search by title
+        $query = Event::where('status', 'valide');
+
+        if ($request->has('category')) {
+            $search = $request->input('category');
+            $query->where('category_id', 'like', "%$search%");
+        }
+
+        // Apply pagination
+        $Acceptevents = $query->simplePaginate(3);
+        $user = session('user_id');
+        $categories = Category::all();
+
+        return view('fontOffice.index', [
+            'Acceptevents' => $Acceptevents,
+            'categories' => $categories,
+            'user' => $user,
+        ]);
     }
 }

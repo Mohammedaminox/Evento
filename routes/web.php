@@ -54,6 +54,10 @@ Route::resource('event', EventController::class)->only([
 ]);
 
 Route::get('/AcceptEvent', [AcceptEventController::class, 'Acceptindex'])->name('AcceptEvent');
+
+Route::get('/AcceptEventsearch', [AcceptEventController::class, 'search'])->name('search');
+Route::get('/AcceptEvent', [AcceptEventController::class, 'filter'])->name('filter');
+
 Route::post('/AcceptEvent/{id}/edit', [AcceptEventController::class, 'Approuve'])->name('approuve');
 
 Route::post('/Reservation', [ReservationController::class, 'store'])->name('reservation');

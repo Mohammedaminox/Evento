@@ -51,7 +51,7 @@
 								<li class="current"><a href="#header">Home</a></li>
 								<li><a href="#about">About us</a></li>
 								<li><a href="#schedule">Schedule</a></li>
-								<li><a href="#blog">Blog</a></li>
+								<li><a href="#blog">Events</a></li>
 								<li><a href="#prices">Pricing</a></li>
 								<li><a href="#team">Our Team</a></li>
 								<li><a href="#testimonial">Testimonials</a></li>
@@ -95,6 +95,63 @@
 	<div class="content">
 		<div class="container box">
 
+			<!--===============================-->
+			<!--== Blog =============-->
+			<!--===============================-->
+			<section id="blog" class="row" style="margin-top: 5%;">
+				<div class="title-start col-md-4 col-md-offset-4">
+					<h2>EVENTS</h2>
+					<p class="sub-text text-center">Awesome news and articles from us</p>
+				</div>
+				<div class="top">
+					<!-- Search input -->
+					<form action="{{ url('AcceptEventsearch') }}" method="GET">
+						<input type="text" name="search" placeholder="Search by title">
+						<button type="submit">Search</button>
+					</form>
+
+					<!-- Filter input -->
+					<form action="{{ route('filter') }}" method="GET">
+						<select name="category">
+							<option value="">All Categories</option>
+							@foreach($categories as $category)
+							<option value="{{ $category->id }}">{{ $category->name }}</option>
+							@endforeach
+						</select>
+						<button type="submit">Filter by Category</button>
+					</form>
+
+
+					<div class="content">
+						@foreach ($Acceptevents as $Acceptevent)
+						<div class="blog col-md-4">
+							<h2 class="blog-head">Evento at {{$Acceptevent->location}} </h2>
+							<h3>
+								<span class="date-line"> on {{$Acceptevent->date}} </span>
+							</h3>
+							<img class="blog-image" src="{{ asset('Pback/assets/images/' . $Acceptevent->image) }}" width="100%" height="250" alt="event Image" />
+
+							<p class="firstpara"><span class="firstcharacter">{{$Acceptevent->titre}}</span>
+							<p> {{$Acceptevent->categories->name}} </p>
+
+							<button class="button-info read-more">Read More</button>
+
+
+							<form action="{{ route('reservation') }}" method="POST">
+								@csrf
+								<input type="hidden" name="user_id" value="{{ $user }}">
+
+								<input type="hidden" name="event_id" value="{{ $Acceptevent->id }}"> <!-- Example event_id value -->
+								<input type="hidden" name="status" value="{{ ($Acceptevent->typeAccept === 'automatique') ? 'accepted' : 'pending' }}">
+								<button type="submit" class="button-info read-more">Reserve Now</button>
+							</form>
+
+
+						</div>
+						@endforeach
+					</div>
+			</section>
+			{!! $Acceptevents->links() !!}
 
 			<!--===============================-->
 			<!--== About us ===================-->
@@ -388,46 +445,6 @@
 
 
 
-			<!--===============================-->
-			<!--== Blog =============-->
-			<!--===============================-->
-			<section id="blog" class="row">
-				<div class="title-start col-md-4 col-md-offset-4">
-					<h2>Blog</h2>
-					<p class="sub-text text-center">Awesome news and articles from us</p>
-				</div>
-				<div class="top">
-				</div>
-				<div class="content">
-					@foreach ($Acceptevents as $Acceptevent)
-					<div class="blog col-md-4">
-						<h2 class="blog-head">Evento at {{$Acceptevent->location}} </h2>
-						<h3>
-							<span class="date-line"> on {{$Acceptevent->date}} </span>
-						</h3>
-						<img class="blog-image" src="{{ asset('Pback/assets/images/' . $Acceptevent->image) }}" width="100%" height="250" alt="event Image" />
-
-						<p class="firstpara"><span class="firstcharacter">{{$Acceptevent->titre}}</span>
-						<p> {!! $Acceptevent->description !!} </p>
-
-						<button class="button-info read-more">Read More</button>
-
-
-						<form action="{{ route('reservation') }}" method="POST">
-							@csrf
-							<input type="hidden" name="user_id" value="{{ $user }}">
-
-							<input type="hidden" name="event_id" value="{{ $Acceptevent->id }}"> <!-- Example event_id value -->
-							<input type="hidden" name="status" value="{{ ($Acceptevent->typeAccept === 'automatique') ? 'accepted' : 'pending' }}">
-							<button type="submit" class="button-info read-more">Reserve Now</button>
-						</form>
-
-
-					</div>
-					@endforeach
-				</div>
-			</section>
-			{!! $Acceptevents->links() !!}
 			<!--==========-->
 			<!--===============================-->
 			<!--== Pricing Tables =============-->
